@@ -1,0 +1,17 @@
+<employees>
+<employee>
+<name>Dave</name>
+<role>Sale Assistant</role>
+<age>34</age>
+</employee>
+<employee>
+<name>Thomas</name>
+<role>CEO</role>
+<age>25</age>
+</employee>
+<employee>
+<name>Eric</name>
+<role>IT</role>
+<age>20</age>
+</employee>
+</employees>
