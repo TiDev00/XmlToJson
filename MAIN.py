@@ -1,9 +1,9 @@
 import os
+import xmltodict
+import json
 
 
 # Function to add the root tag to all files in a directory
-
-
 def root_tag(my_file_path):
     directory = my_file_path
 
@@ -21,4 +21,17 @@ def root_tag(my_file_path):
                 file.write("</Collection>\n")
                 file.close()
 
-root_tag("DossierTest")
+
+# Function to create json file from xml file
+def converter(my_file):
+    with open(my_file, 'r') as file:
+        obj = xmltodict.parse(file.read())
+        file.close()
+        json_object = json.dumps(obj, indent=2)
+
+    with open(my_file.replace(".xml", ".json"), "w") as json_file:
+        json_file.write(json_object)
+        json_file.close()
+
+
+converter("test0.xml")
