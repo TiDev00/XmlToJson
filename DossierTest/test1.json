@@ -1,0 +1,21 @@
+{
+  "Collection": {
+    "employee": [
+      {
+        "name": "Dave",
+        "role": "Sale Assistant",
+        "age": "34"
+      },
+      {
+        "name": "Thomas",
+        "role": "CEO",
+        "age": "25"
+      },
+      {
+        "name": "Eric",
+        "role": "IT",
+        "age": "20"
+      }
+    ]
+  }
+}

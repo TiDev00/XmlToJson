@@ -1,0 +1,21 @@
+{
+  "Collection": {
+    "employee": [
+      {
+        "name": "Elene",
+        "role": "Driver",
+        "age": "18"
+      },
+      {
+        "name": "Habib",
+        "role": "Student",
+        "age": "17"
+      },
+      {
+        "name": "Abidal",
+        "role": "Footballer",
+        "age": "15"
+      }
+    ]
+  }
+}
