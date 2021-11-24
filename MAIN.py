@@ -1,6 +1,5 @@
 import os
 import re
-
 import xmltodict
 import json
 import codecs
@@ -61,10 +60,11 @@ def replacer(directory):
                 f = re.sub('</TEXT>', '</field>', f)
                 f = re.sub('<BYLINE>', '<field name=\"byline\">', f)
                 f = re.sub('</BYLINE>', '</field>', f)
+                f = re.sub('<NOTE>', '<field name=\"note\">', f)
+                f = re.sub('</NOTE>', '</field>', f)
+                f = re.sub('<UNK>', '<field name=\"unk\">', f)
+                f = re.sub('</UNK>', '</field>', f)
                 file.seek(0)
                 file.write(f)
                 file.truncate()
 
-
-root_tag('docs')
-replacer('docs')
