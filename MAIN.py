@@ -68,3 +68,5 @@ def replacer(directory):
                 file.write(f)
                 file.truncate()
 
+root_tag('../../UQAM/Cours/NLP/project_part 1/TREC_AP_88_90/collection_de_documents')
+replacer('../../UQAM/Cours/NLP/project_part 1/TREC_AP_88_90/collection_de_documents')
