@@ -16,8 +16,13 @@ def root_tag(directory):
                 file.seek(0)
                 file.write("<add>\n" + old)
                 file.close()
+            with codecs.open(filepath, "r+", encoding="ISO-8859-1") as file:
+                old2 = file.read()
+                file.seek(0)
+                file.write("<?xml version = \"1.0\" encoding = \"ISO-8859-1\"?>\n" + old2)
+                file.close()
             with codecs.open(filepath, "a") as file:
-                file.write("</add>\n")
+                file.write("\n</add>")
                 file.close()
 
 
@@ -40,7 +45,7 @@ def replacer(directory):
     for filename in os.listdir(directory):
         filepath = os.path.join(directory, filename)
         if os.path.isfile(filepath):
-            with codecs.open(filepath, 'r+', encoding='ISO-8859-1') as file:
+            with codecs.open(filepath, 'r+') as file:
                 f = file.read()
                 f = re.sub('<DOC>', '<doc>', f)
                 f = re.sub('</DOC>', '</doc>', f)
@@ -64,11 +69,7 @@ def replacer(directory):
                 f = re.sub('</NOTE>', '</field>', f)
                 f = re.sub('<UNK>', '<field name=\"unk\">', f)
                 f = re.sub('</UNK>', '</field>', f)
-                f = re.sub('<', '&lt;', f)
-                f = re.sub('>', '&gt;', f)
                 f = re.sub('&', '&amp;', f)
-                f = re.sub('\'', '&apos;', f)
-                f = re.sub('\"', '&quot;', f)
                 file.seek(0)
                 file.write(f)
                 file.truncate()
