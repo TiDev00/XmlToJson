@@ -35,7 +35,7 @@ def converter(directory):
                 json_file.close()
 
 
-# Function to replace tag properly
+# Function to replace tag properly for all files in a directory
 def replacer(directory):
     for filename in os.listdir(directory):
         filepath = os.path.join(directory, filename)
@@ -68,5 +68,3 @@ def replacer(directory):
                 file.write(f)
                 file.truncate()
 
-root_tag('../../UQAM/Cours/NLP/project_part 1/TREC_AP_88_90/collection_de_documents')
-replacer('../../UQAM/Cours/NLP/project_part 1/TREC_AP_88_90/collection_de_documents')
