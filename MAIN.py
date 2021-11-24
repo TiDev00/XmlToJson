@@ -67,4 +67,3 @@ def replacer(directory):
                 file.seek(0)
                 file.write(f)
                 file.truncate()
-
